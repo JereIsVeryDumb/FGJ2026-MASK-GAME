@@ -1,18 +1,45 @@
 [gd_scene format=3 uid="uid://06hjdg86djqw"]
 
+[ext_resource type="Script" uid="uid://c476l7dh00f1n" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bsuje0sg25egd" path="res://Assets/placeholder potato.png" id="1_v0iea"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
-radius = 58.0
-height = 122.0
+radius = 49.0
+height = 210.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
+radius = 32.24903
 
 [node name="Player" type="CharacterBody2D" unique_id=2129102789]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=44540277]
-position = Vector2(543, 370)
-shape = SubResource("CapsuleShape2D_cvnsp")
+physics_interpolation_mode = 1
+collision_layer = 2
+collision_mask = 65533
+script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1648962992]
-position = Vector2(566.75, 359.75)
+position = Vector2(15.750015, -16.249985)
 scale = Vector2(0.39437503, 0.39437503)
 texture = ExtResource("1_v0iea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=44540277]
+position = Vector2(1.5258789e-05, 1.0000153)
+shape = SubResource("CapsuleShape2D_cvnsp")
+
+[node name="ClawHurtBox" type="Area2D" parent="." unique_id=639542864]
+position = Vector2(66.000015, -26.999985)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClawHurtBox" unique_id=1293619191]
+position = Vector2(7, -6)
+shape = SubResource("CircleShape2D_cvnsp")
+
+[node name="ColorRect" type="ColorRect" parent="ClawHurtBox" unique_id=323407669]
+offset_left = -14.0
+offset_top = -27.0
+offset_right = 26.0
+offset_bottom = 13.0
+
+[node name="ClawLeft" type="Node2D" parent="." unique_id=1576330081]
+position = Vector2(-50, -14)
+
+[node name="ClawRight" type="Node2D" parent="." unique_id=1999948086]
+position = Vector2(70, -29)

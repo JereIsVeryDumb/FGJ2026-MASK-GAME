@@ -1,9 +1,31 @@
 [gd_scene format=3 uid="uid://3jy6cgwhjm4e"]
 
+[ext_resource type="PackedScene" uid="uid://06hjdg86djqw" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://d0qtowtvrwv85" path="res://Scenes/enemy.tscn" id="2_bo1nx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u77a"]
+size = Vector2(1154.5, 40)
+
 [node name="Main" type="Node2D" unique_id=2071018272]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1798999755]
+[node name="Player" parent="." unique_id=2129102789 instance=ExtResource("1_jjgbg")]
+position = Vector2(362.00018, 337)
+scale = Vector2(0.27999997, 0.27999997)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=715538274]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1470588443]
+scale = Vector2(1.6000016, 1)
+collision_mask = 65535
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1472337669]
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1150617481]
+offset_top = 606.0
+offset_right = 40.0
+offset_bottom = 646.0
+scale = Vector2(28.880003, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=715538274]
+position = Vector2(576.75, 627)
+shape = SubResource("RectangleShape2D_7u77a")
+
+[node name="Enemy" parent="." unique_id=949670304 instance=ExtResource("2_bo1nx")]
+position = Vector2(716, 445)
+scale = Vector2(1.3599994, 1.3599994)

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d0qtowtvrwv85"]
+
+[ext_resource type="Script" uid="uid://ccfvpp0v57hl6" path="res://Scenes/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://cqmsyalg2gwqu" path="res://Assets/evil placeholder potato.png" id="1_hghv2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hghv2"]
+radius = 14.0
+height = 56.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
+size = Vector2(102.55684, 88.0682)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=949670304]
+scale = Vector2(3.5199995, 3.5199995)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_1f0kj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1828768671]
+scale = Vector2(0.12000003, 0.12000003)
+texture = ExtResource("1_hghv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557876781]
+position = Vector2(-5, 1)
+shape = SubResource("CapsuleShape2D_hghv2")
+
+[node name="Fear" type="Area2D" parent="." unique_id=1429609357]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fear" unique_id=2089143400]
+position = Vector2(4.11932, 2.5568213)
+shape = SubResource("RectangleShape2D_1f0kj")
+
+[connection signal="area_entered" from="Fear" to="." method="_on_fear_area_entered"]
+[connection signal="body_entered" from="Fear" to="." method="_on_fear_body_entered"]
+[connection signal="body_exited" from="Fear" to="." method="_on_fear_body_exited"]

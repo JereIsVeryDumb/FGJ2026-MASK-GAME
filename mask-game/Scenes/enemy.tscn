@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d0qtowtvrwv85"]
+
+[ext_resource type="Script" uid="uid://ccfvpp0v57hl6" path="res://Scenes/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://cqmsyalg2gwqu" path="res://Assets/evil placeholder potato.png" id="1_hghv2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hghv2"]
+radius = 14.0
+height = 66.750015
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
+size = Vector2(102.55684, 88.0682)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=949670304]
+scale = Vector2(3.5199995, 3.5199995)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_1f0kj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1828768671]
+scale = Vector2(0.12000003, 0.12000003)
+texture = ExtResource("1_hghv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557876781]
+position = Vector2(-5.113637, 4.5454555)
+shape = SubResource("CapsuleShape2D_hghv2")
+
+[node name="LeftFear" type="Area2D" parent="." unique_id=1429609357]
+position = Vector2(-75.85229, -2.2727277)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFear" unique_id=2089143400]
+position = Vector2(20.170458, 0.56818235)
+scale = Vector2(0.5454545, 0.5454545)
+shape = SubResource("RectangleShape2D_1f0kj")
+
+[node name="RightFear" type="Area2D" parent="." unique_id=1524048246]
+position = Vector2(57.386375, -2.2727277)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightFear" unique_id=1177861081]
+position = Vector2(-21.875008, 1.988637)
+scale = Vector2(0.51962805, 0.5833333)
+shape = SubResource("RectangleShape2D_1f0kj")
+
+[connection signal="body_entered" from="LeftFear" to="." method="_on_left_fear_body_entered"]
+[connection signal="body_exited" from="LeftFear" to="." method="_on_left_fear_body_exited"]
+[connection signal="body_entered" from="RightFear" to="." method="_on_right_fear_body_entered"]
+[connection signal="body_exited" from="RightFear" to="." method="_on_right_fear_body_exited"]
