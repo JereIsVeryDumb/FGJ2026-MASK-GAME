@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 600.0
 const JUMP_VELOCITY = -400.0
-
+var killcount = 0
 # Track enemies in attack range
 var enemies_in_attack_range: Array = []
 
@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("claw"):
 		for enemy in enemies_in_attack_range:
 			if enemy and enemy.alive:
-				enemy.take_damage(1)
+				enemy.take_damage(Global.damage)
 				print("Attacked enemy:", enemy.name)
 
 	# --- Pickup dead enemies ---
@@ -66,8 +66,15 @@ func pick_up_enemy(enemy):
 	print("Picked up enemy:", enemy.name)
 	enemies_in_pickup_area.erase(enemy)
 	enemy.queue_free()
-
-
+	killcount += 1
+	Global.damage += 1
+	
+	var mask_name = "Mask" + str(killcount)
+	var mask_node = $Masks.get_node(mask_name)
+	
+	if mask_node:
+		mask_node.visible = true
+	
 # --- Claw hurtbox signals ---
 func _on_claw_hurt_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):

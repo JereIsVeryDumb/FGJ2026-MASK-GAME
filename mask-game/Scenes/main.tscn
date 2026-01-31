@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dlfp0x5fql6pv" path="res://Assets/sieni 3.png" id="4_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://car553vxfoc6m" path="res://Assets/sieni 2.png" id="5_6iyac"]
 [ext_resource type="Texture2D" uid="uid://cxn7dq7k8jlqg" path="res://Assets/sieni1.png" id="6_fdnlq"]
+[ext_resource type="Shader" uid="uid://nutbcyyjlrbp" path="res://Assets/crtshader.gdshader" id="10_hptm8"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ynf5e"]
 
@@ -17,6 +18,31 @@ noise = SubResource("FastNoiseLite_ynf5e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7u77a"]
 size = Vector2(1154.5, 40)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d1ilt"]
+shader = ExtResource("10_hptm8")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.14
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.38
+shader_parameter/scanline_strength = 0.95
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 1.8
+shader_parameter/wobble_px = 1.5
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
 
 [node name="Main" type="Node2D" unique_id=2071018272]
 
@@ -150,10 +176,6 @@ position = Vector2(953.5001, 550.00006)
 scale = Vector2(3.7324219, 2.1289065)
 texture = SubResource("NoiseTexture2D_hptm8")
 
-[node name="Player" parent="." unique_id=2129102789 instance=ExtResource("1_jjgbg")]
-position = Vector2(876, 371.00003)
-scale = Vector2(0.27999997, 0.27999997)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1470588443]
 position = Vector2(24, 420)
 scale = Vector2(1.6000016, 1)
@@ -172,22 +194,31 @@ visible = false
 position = Vector2(576.75, 627)
 shape = SubResource("RectangleShape2D_7u77a")
 
-[node name="Enemy2" parent="." unique_id=949670304 instance=ExtResource("2_bo1nx")]
-unique_name_in_owner = true
-position = Vector2(852, 569)
-scale = Vector2(1.3599994, 1.3599994)
-
-[node name="Enemy3" parent="." unique_id=1001451834 instance=ExtResource("2_bo1nx")]
-unique_name_in_owner = true
-position = Vector2(1296, 744)
-scale = Vector2(1.3599994, 1.3599994)
-
 [node name="Enemy" parent="." unique_id=1570632947 instance=ExtResource("2_bo1nx")]
 unique_name_in_owner = true
 position = Vector2(716, 445)
 scale = Vector2(1.3599994, 1.3599994)
 
+[node name="Enemy2" parent="." unique_id=949670304 instance=ExtResource("2_bo1nx")]
+unique_name_in_owner = true
+position = Vector2(1226, 716)
+scale = Vector2(1.3599994, 1.3599994)
+
+[node name="Player" parent="." unique_id=2129102789 instance=ExtResource("1_jjgbg")]
+position = Vector2(217, 551)
+scale = Vector2(1.0900006, 1.0900006)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=761265403]
 offset_right = 1917.0
 offset_bottom = 1078.0
 color = Color(0, 0, 0, 0.6313726)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1876478000]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1653974737]
+material = SubResource("ShaderMaterial_d1ilt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
