@@ -1,39 +1,24 @@
-[gd_scene format=3 uid="uid://3jy6cgwhjm4e"]
+[gd_scene format=3 uid="uid://cnxpf84v5n0gw"]
 
-[ext_resource type="Texture2D" uid="uid://ca02anypcjbqo" path="res://Assets/puu1.png" id="1_344ge"]
-[ext_resource type="Script" uid="uid://1jwrmairwmbd" path="res://Scenes/main.gd" id="1_h1bgf"]
-[ext_resource type="PackedScene" uid="uid://06hjdg86djqw" path="res://Scenes/player.tscn" id="1_jjgbg"]
-[ext_resource type="Texture2D" uid="uid://d3au8o30yugfb" path="res://Assets/toi star wars.png" id="1_ynf5e"]
-[ext_resource type="PackedScene" uid="uid://d0qtowtvrwv85" path="res://Scenes/enemy.tscn" id="2_bo1nx"]
-[ext_resource type="Texture2D" uid="uid://ce784n1bvufex" path="res://Assets/KuusiPuutPNG.webp" id="2_wsu2k"]
-[ext_resource type="Texture2D" uid="uid://cmo8byol2wli8" path="res://Assets/puu2.png" id="2_ynf5e"]
-[ext_resource type="Texture2D" uid="uid://ctq464sowy8oe" path="res://Assets/puu3.png" id="3_hptm8"]
-[ext_resource type="Texture2D" uid="uid://dlfp0x5fql6pv" path="res://Assets/sieni 3.png" id="4_d1ilt"]
-[ext_resource type="Texture2D" uid="uid://car553vxfoc6m" path="res://Assets/sieni 2.png" id="5_6iyac"]
-[ext_resource type="Texture2D" uid="uid://cxn7dq7k8jlqg" path="res://Assets/sieni1.png" id="6_fdnlq"]
-[ext_resource type="Texture2D" uid="uid://c25151b30qjvu" path="res://Assets/puska.png" id="7_fdnlq"]
-[ext_resource type="Texture2D" uid="uid://bvi7u1vjf78ya" path="res://Assets/nurmikko.png" id="8_d1ilt"]
-[ext_resource type="Texture2D" uid="uid://vc6qsh21itak" path="res://Assets/maa.png" id="9_6iyac"]
-[ext_resource type="Texture2D" uid="uid://bqhj4ipmjteul" path="res://Assets/AloitusAluePNG.webp" id="9_b3802"]
-[ext_resource type="Texture2D" uid="uid://bhb3dhcekisvk" path="res://Assets/ruukkipuu1.png" id="9_jkdf5"]
-[ext_resource type="Shader" uid="uid://nutbcyyjlrbp" path="res://Assets/crtshader.gdshader" id="10_hptm8"]
-[ext_resource type="Texture2D" uid="uid://7wybm3cw3a6p" path="res://Assets/ruukkipuu3.png" id="11_k12tt"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_b3802"]
-seed = 1
-frequency = 0.0004
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fevyy"]
-width = 16
-height = 16
-noise = SubResource("FastNoiseLite_b3802")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hibaj"]
-particle_flag_disable_z = true
-spread = 0.0
-gravity = Vector3(0, -65, 0)
-scale_min = 0.45
-scale_max = 1.4
+[ext_resource type="Script" uid="uid://bwqqv13e0e1qq" path="res://Scenes/main2.gd" id="1_l0sm3"]
+[ext_resource type="Texture2D" uid="uid://d3au8o30yugfb" path="res://Assets/toi star wars.png" id="2_1v8r1"]
+[ext_resource type="Texture2D" uid="uid://c6pin36mke2ui" path="res://Assets/jaripng.webp" id="2_l0sm3"]
+[ext_resource type="Texture2D" uid="uid://ce784n1bvufex" path="res://Assets/KuusiPuutPNG.webp" id="3_go1jf"]
+[ext_resource type="Texture2D" uid="uid://ctq464sowy8oe" path="res://Assets/puu3.png" id="4_7mvmt"]
+[ext_resource type="Texture2D" uid="uid://c1lk8yirkyxlp" path="res://Assets/kuusia tastalta.webp" id="5_go1jf"]
+[ext_resource type="Texture2D" uid="uid://ca02anypcjbqo" path="res://Assets/puu1.png" id="5_p1oyv"]
+[ext_resource type="Texture2D" uid="uid://cmo8byol2wli8" path="res://Assets/puu2.png" id="6_rcyw2"]
+[ext_resource type="Texture2D" uid="uid://dlfp0x5fql6pv" path="res://Assets/sieni 3.png" id="7_n5n48"]
+[ext_resource type="Texture2D" uid="uid://car553vxfoc6m" path="res://Assets/sieni 2.png" id="8_3p5r5"]
+[ext_resource type="Texture2D" uid="uid://c25151b30qjvu" path="res://Assets/puska.png" id="9_uhddi"]
+[ext_resource type="Texture2D" uid="uid://cxn7dq7k8jlqg" path="res://Assets/sieni1.png" id="10_d1eiu"]
+[ext_resource type="Texture2D" uid="uid://bhb3dhcekisvk" path="res://Assets/ruukkipuu1.png" id="11_axuel"]
+[ext_resource type="Texture2D" uid="uid://7wybm3cw3a6p" path="res://Assets/ruukkipuu3.png" id="12_ncmf3"]
+[ext_resource type="Texture2D" uid="uid://bvi7u1vjf78ya" path="res://Assets/nurmikko.png" id="13_u5i0y"]
+[ext_resource type="Texture2D" uid="uid://vc6qsh21itak" path="res://Assets/maa.png" id="14_habdg"]
+[ext_resource type="PackedScene" uid="uid://d0qtowtvrwv85" path="res://Scenes/enemy.tscn" id="15_qas6s"]
+[ext_resource type="PackedScene" uid="uid://06hjdg86djqw" path="res://Scenes/player.tscn" id="16_37jld"]
+[ext_resource type="Shader" uid="uid://nutbcyyjlrbp" path="res://Assets/crtshader.gdshader" id="17_0o7lx"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ynf5e"]
 
@@ -43,7 +28,7 @@ noise = SubResource("FastNoiseLite_ynf5e")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7u77a"]
 size = Vector2(1154.5, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3802"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0sm3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
 size = Vector2(190.5, 1025)
@@ -52,7 +37,7 @@ size = Vector2(190.5, 1025)
 font_size = 56
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d1ilt"]
-shader = ExtResource("10_hptm8")
+shader = ExtResource("17_0o7lx")
 shader_parameter/brightness = 1.02
 shader_parameter/contrast = 1.08
 shader_parameter/saturation = 1.1
@@ -76,163 +61,207 @@ shader_parameter/roll_strength = 0.15
 shader_parameter/glow_strength = 0.25
 shader_parameter/glow_threshold = 0.65
 
-[node name="Main" type="Node2D" unique_id=2071018272]
-script = ExtResource("1_h1bgf")
+[node name="Main2" type="Node2D" unique_id=2071018272]
+script = ExtResource("1_l0sm3")
 
 [node name="Assetit" type="Node2D" parent="." unique_id=1023800409]
+
+[node name="Sprite2D" type="Sprite2D" parent="Assetit" unique_id=760076590]
+position = Vector2(1205, 319)
+scale = Vector2(1.7515113, 1.7515113)
+texture = ExtResource("2_1v8r1")
 
 [node name="ToiStarWars" type="Sprite2D" parent="Assetit" unique_id=1092091606]
 position = Vector2(961.78345, 540.5)
 scale = Vector2(1.3904637, 1.390464)
-texture = ExtResource("1_ynf5e")
-
-[node name="Foreground2" type="Sprite2D" parent="Assetit" unique_id=50049625]
-position = Vector2(-105, 810)
-texture = ExtResource("2_wsu2k")
-
-[node name="Foreground3" type="Sprite2D" parent="Assetit" unique_id=701392945]
-position = Vector2(1187, 729)
-texture = ExtResource("2_wsu2k")
+texture = ExtResource("2_l0sm3")
 
 [node name="Foreground" type="Sprite2D" parent="Assetit" unique_id=853612427]
-position = Vector2(800, 568)
-texture = ExtResource("2_wsu2k")
+position = Vector2(821, 771)
+texture = ExtResource("3_go1jf")
+
+[node name="Foreground2" type="Sprite2D" parent="Assetit" unique_id=285782723]
+position = Vector2(1364, 390)
+texture = ExtResource("3_go1jf")
+
+[node name="Horizon" type="Sprite2D" parent="Assetit" unique_id=831190686]
+position = Vector2(691, 132)
+texture = ExtResource("5_go1jf")
+
+[node name="Puu11" type="Sprite2D" parent="Assetit" unique_id=827001912]
+position = Vector2(464, 863)
+scale = Vector2(0.6106909, 0.6106909)
+texture = ExtResource("4_7mvmt")
+
+[node name="Puu1" type="Sprite2D" parent="Assetit" unique_id=1724017339]
+visible = false
+position = Vector2(156, 759)
+texture = ExtResource("5_p1oyv")
+
+[node name="Puu2" type="Sprite2D" parent="Assetit" unique_id=2017753906]
+visible = false
+position = Vector2(1783, 751)
+texture = ExtResource("6_rcyw2")
+
+[node name="Puu3" type="Sprite2D" parent="Assetit" unique_id=1088769677]
+visible = false
+position = Vector2(1180, 750)
+texture = ExtResource("6_rcyw2")
+
+[node name="Puu4" type="Sprite2D" parent="Assetit" unique_id=235094724]
+visible = false
+position = Vector2(574, 751)
+texture = ExtResource("4_7mvmt")
 
 [node name="Sieni3" type="Sprite2D" parent="Assetit" unique_id=954336423]
 position = Vector2(672, 997)
 scale = Vector2(0.65, 0.65000004)
-texture = ExtResource("4_d1ilt")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Assetit" unique_id=1962058963]
-position = Vector2(681, 713)
-sub_emitter = NodePath(".")
-texture = SubResource("NoiseTexture2D_fevyy")
-explosiveness = 0.43
-process_material = SubResource("ParticleProcessMaterial_hibaj")
-
-[node name="CarCrash" type="Sprite2D" parent="Assetit" unique_id=1052775739]
-position = Vector2(900.9999, 742.99994)
-scale = Vector2(0.5517076, 0.6317125)
-texture = ExtResource("9_b3802")
-
-[node name="Puska4" type="Sprite2D" parent="Assetit" unique_id=380094870]
-position = Vector2(877, 1000)
-texture = ExtResource("7_fdnlq")
+texture = ExtResource("7_n5n48")
 
 [node name="Sieni2" type="Sprite2D" parent="Assetit" unique_id=858715460]
 position = Vector2(1246, 997)
 scale = Vector2(0.61864406, 0.61864406)
-texture = ExtResource("5_6iyac")
+texture = ExtResource("8_3p5r5")
 
 [node name="Puska" type="Sprite2D" parent="Assetit" unique_id=626937653]
 position = Vector2(143, 958)
-texture = ExtResource("7_fdnlq")
-
-[node name="Puu6" type="Sprite2D" parent="Assetit" unique_id=1004162863]
-position = Vector2(189, 689)
-texture = ExtResource("1_344ge")
-
-[node name="Puu13" type="Sprite2D" parent="Assetit" unique_id=575125619]
-position = Vector2(1219, 705)
-texture = ExtResource("2_ynf5e")
-
-[node name="Puu5" type="Sprite2D" parent="Assetit" unique_id=2120199157]
-position = Vector2(232, 783)
-texture = ExtResource("2_ynf5e")
-
-[node name="Puska3" type="Sprite2D" parent="Assetit" unique_id=1309830202]
-position = Vector2(523, 957)
-texture = ExtResource("7_fdnlq")
+texture = ExtResource("9_uhddi")
 
 [node name="Sieni1" type="Sprite2D" parent="Assetit" unique_id=96785287]
 position = Vector2(192, 984.00006)
 scale = Vector2(0.7807019, 0.7807017)
-texture = ExtResource("6_fdnlq")
+texture = ExtResource("10_d1eiu")
+
+[node name="Puu5" type="Sprite2D" parent="Assetit" unique_id=2120199157]
+visible = false
+position = Vector2(908, 752)
+texture = ExtResource("6_rcyw2")
 
 [node name="Puu12" type="Sprite2D" parent="Assetit" unique_id=958754849]
-position = Vector2(473.00006, 787)
+visible = false
+position = Vector2(270, 813)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_ynf5e")
+texture = ExtResource("6_rcyw2")
+
+[node name="Puu6" type="Sprite2D" parent="Assetit" unique_id=1004162863]
+visible = false
+position = Vector2(757, 761)
+texture = ExtResource("5_p1oyv")
 
 [node name="Puu16" type="Sprite2D" parent="Assetit" unique_id=611372063]
+visible = false
 position = Vector2(1266, 770)
-texture = ExtResource("2_ynf5e")
+texture = ExtResource("6_rcyw2")
 
 [node name="Puu7" type="Sprite2D" parent="Assetit" unique_id=520690757]
 position = Vector2(354, 753)
-texture = ExtResource("3_hptm8")
+texture = ExtResource("4_7mvmt")
 
 [node name="Puu8" type="Sprite2D" parent="Assetit" unique_id=33509897]
-position = Vector2(1277, 759)
-texture = ExtResource("2_ynf5e")
+position = Vector2(1050, 757)
+texture = ExtResource("6_rcyw2")
 
 [node name="Puu9" type="Sprite2D" parent="Assetit" unique_id=941711183]
 position = Vector2(1374, 763)
-texture = ExtResource("1_344ge")
+texture = ExtResource("5_p1oyv")
+
+[node name="Puska2" type="Sprite2D" parent="Assetit" unique_id=950487400]
+position = Vector2(1130, 986)
+texture = ExtResource("9_uhddi")
 
 [node name="Ruukkipuu" type="Sprite2D" parent="Assetit" unique_id=731848630]
 position = Vector2(1146.0001, 747)
 scale = Vector2(1.0741885, 1.854471)
-texture = ExtResource("9_jkdf5")
+texture = ExtResource("11_axuel")
 
 [node name="Puu10" type="Sprite2D" parent="Assetit" unique_id=1211954570]
+visible = false
 position = Vector2(1570, 754)
-texture = ExtResource("3_hptm8")
+texture = ExtResource("4_7mvmt")
 
 [node name="Ruukkipuu2" type="Sprite2D" parent="Assetit" unique_id=1618700508]
-position = Vector2(170.00002, 690.00006)
+position = Vector2(1919, 512.00006)
 scale = Vector2(1.4302973, 1.7902949)
-texture = ExtResource("9_jkdf5")
+texture = ExtResource("11_axuel")
 
 [node name="Ruukkipuu3" type="Sprite2D" parent="Assetit" unique_id=218004287]
 position = Vector2(1867, 619)
 scale = Vector2(1.4302973, 1.7902949)
-texture = ExtResource("11_k12tt")
+texture = ExtResource("12_ncmf3")
 
 [node name="Sieni5" type="Sprite2D" parent="Assetit" unique_id=1751907265]
 position = Vector2(442.99997, 989.99994)
 scale = Vector2(0.7288135, 0.7288136)
-texture = ExtResource("5_6iyac")
+texture = ExtResource("8_3p5r5")
 
 [node name="Sieni4" type="Sprite2D" parent="Assetit" unique_id=42980872]
 position = Vector2(981, 992)
 scale = Vector2(0.61864406, 0.61864406)
-texture = ExtResource("5_6iyac")
+texture = ExtResource("8_3p5r5")
 
 [node name="Sieni6" type="Sprite2D" parent="Assetit" unique_id=631791359]
 position = Vector2(1417, 1001)
 scale = Vector2(0.65, 0.65000004)
-texture = ExtResource("4_d1ilt")
+texture = ExtResource("7_n5n48")
+
+[node name="Ruukkipuu4" type="Sprite2D" parent="Assetit" unique_id=1188294316]
+position = Vector2(44, 680)
+scale = Vector2(1.0741885, 1.854471)
+texture = ExtResource("11_axuel")
 
 [node name="Sieni7" type="Sprite2D" parent="Assetit" unique_id=374223216]
 position = Vector2(791.99994, 985)
 scale = Vector2(0.7807019, 0.7807017)
-texture = ExtResource("6_fdnlq")
-
-[node name="Puska2" type="Sprite2D" parent="Assetit" unique_id=950487400]
-position = Vector2(1130, 986)
-texture = ExtResource("7_fdnlq")
+texture = ExtResource("10_d1eiu")
 
 [node name="Sieni8" type="Sprite2D" parent="Assetit" unique_id=1765718897]
 position = Vector2(1656, 992)
 scale = Vector2(0.7807019, 0.7807017)
-texture = ExtResource("6_fdnlq")
+texture = ExtResource("10_d1eiu")
+
+[node name="Puu13" type="Sprite2D" parent="Assetit" unique_id=575125619]
+visible = false
+position = Vector2(1050, 757)
+texture = ExtResource("6_rcyw2")
+
+[node name="Puu14" type="Sprite2D" parent="Assetit" unique_id=725212346]
+position = Vector2(1454, 759)
+texture = ExtResource("6_rcyw2")
+
+[node name="Puu15" type="Sprite2D" parent="Assetit" unique_id=1722508938]
+position = Vector2(36, 749)
+texture = ExtResource("6_rcyw2")
+
+[node name="Puu17" type="Sprite2D" parent="Assetit" unique_id=1094448667]
+visible = false
+position = Vector2(1689, 747)
+texture = ExtResource("6_rcyw2")
+
+[node name="Puu18" type="Sprite2D" parent="Assetit" unique_id=740395258]
+visible = false
+position = Vector2(850, 784)
+texture = ExtResource("5_p1oyv")
+
+[node name="Puu19" type="Sprite2D" parent="Assetit" unique_id=873663004]
+visible = false
+position = Vector2(1076, 781)
+texture = ExtResource("6_rcyw2")
 
 [node name="Grass" type="Sprite2D" parent="Assetit" unique_id=1791103214]
 position = Vector2(294, 987)
-texture = ExtResource("8_d1ilt")
+texture = ExtResource("13_u5i0y")
 
 [node name="Grass2" type="Sprite2D" parent="Assetit" unique_id=1338294040]
 position = Vector2(880, 987)
-texture = ExtResource("8_d1ilt")
+texture = ExtResource("13_u5i0y")
 
 [node name="Grass3" type="Sprite2D" parent="Assetit" unique_id=349258066]
 position = Vector2(1422.5, 987)
-texture = ExtResource("8_d1ilt")
+texture = ExtResource("13_u5i0y")
 
 [node name="Grass4" type="Sprite2D" parent="Assetit" unique_id=2099144459]
 position = Vector2(2008.5, 987)
-texture = ExtResource("8_d1ilt")
+texture = ExtResource("13_u5i0y")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1607246863]
 position = Vector2(953.5001, 550.00006)
@@ -251,6 +280,7 @@ offset_right = 25.36614
 offset_bottom = 663.0
 scale = Vector2(28.880003, 1)
 color = Color(0.043137256, 0.1764706, 0.05882353, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=715538274]
 visible = false
@@ -259,39 +289,39 @@ shape = SubResource("RectangleShape2D_7u77a")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=386004580]
 position = Vector2(266.24976, 608)
-texture = ExtResource("9_6iyac")
+texture = ExtResource("14_habdg")
 
 [node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=1825680686]
 position = Vector2(858.1242, 606)
-texture = ExtResource("9_6iyac")
+texture = ExtResource("14_habdg")
 
-[node name="Enemy" parent="." unique_id=1570632947 instance=ExtResource("2_bo1nx")]
+[node name="Enemy" parent="." unique_id=1570632947 instance=ExtResource("15_qas6s")]
 unique_name_in_owner = true
-position = Vector2(156.00012, 962)
+position = Vector2(1417.0001, 912.00006)
 scale = Vector2(2.03, 2.03)
 
-[node name="Enemy2" parent="." unique_id=949670304 instance=ExtResource("2_bo1nx")]
+[node name="Enemy2" parent="." unique_id=949670304 instance=ExtResource("15_qas6s")]
 unique_name_in_owner = true
-position = Vector2(1775, 959)
+position = Vector2(1614.0001, 925.00006)
 scale = Vector2(2.03, 2.03)
 
-[node name="Player" parent="." unique_id=2129102789 instance=ExtResource("1_jjgbg")]
-position = Vector2(953, 920)
+[node name="Player" parent="." unique_id=2129102789 instance=ExtResource("16_37jld")]
+position = Vector2(217, 551)
 scale = Vector2(1.0900006, 1.0900006)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1581827304]
-position = Vector2(46.000004, 539)
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=307656748]
+position = Vector2(-15, 518)
 scale = Vector2(5.8099065, 63.36001)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=14495929]
-shape = SubResource("RectangleShape2D_b3802")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=401752818]
+shape = SubResource("RectangleShape2D_l0sm3")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=11585032]
-position = Vector2(1910, 470)
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1441035913]
+position = Vector2(1902.0001, 453.00003)
 scale = Vector2(5.8099065, 63.36001)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=64673020]
-shape = SubResource("RectangleShape2D_b3802")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1199866925]
+shape = SubResource("RectangleShape2D_l0sm3")
 
 [node name="Level2Pass" type="Area2D" parent="." unique_id=441518048]
 position = Vector2(1832, 889)
@@ -299,13 +329,13 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Pass" unique_id=530216777]
-position = Vector2(-164, -75)
+position = Vector2(-14.75, -360.5)
 shape = SubResource("RectangleShape2D_h1bgf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=761265403]
 offset_right = 1917.0
 offset_bottom = 1078.0
-color = Color(0, 0, 0, 0.38431373)
+color = Color(0, 0, 0, 0.6313726)
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1876478000]
@@ -350,10 +380,6 @@ material = SubResource("ShaderMaterial_d1ilt")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 22.0
-offset_top = 8.0
-offset_right = 22.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

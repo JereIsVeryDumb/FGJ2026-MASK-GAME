@@ -5,9 +5,9 @@ render_mode unshaded;
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
 // --- Color controls ---
-uniform float brightness : hint_range(0.0, 2.0) = 1.02;
+uniform float brightness : hint_range(0.0, 2.0) = 1.43;
 uniform float contrast   : hint_range(0.0, 2.0) = 1.08;
-uniform float saturation : hint_range(0.0, 2.0) = 1.10;
+uniform float saturation : hint_range(0.0, 2.0) = 1.85;
 uniform float gamma      : hint_range(0.2, 3.0) = 1.05;
 
 // --- CRT geometry / lens ---

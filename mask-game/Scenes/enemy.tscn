@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://d0qtowtvrwv85"]
 
 [ext_resource type="Script" uid="uid://ccfvpp0v57hl6" path="res://Scenes/enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://cqmsyalg2gwqu" path="res://Assets/evil placeholder potato.png" id="1_hghv2"]
+[ext_resource type="PackedScene" uid="uid://b2cuyiv6uf2kj" path="res://Scenes/bullet.tscn" id="2_287tu"]
+[ext_resource type="Texture2D" uid="uid://2d07g76qvwiq" path="res://Assets/Solifer-67.webp" id="3_287tu"]
 [ext_resource type="Texture2D" uid="uid://dgqiar5slw87a" path="res://Assets/death.png" id="3_afpow"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hghv2"]
 radius = 14.0
-height = 66.750015
+height = 101.13638
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
-size = Vector2(496.5825, 88.0682)
+size = Vector2(617.7981, 88.0682)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afpow"]
 size = Vector2(70.73865, 75.56819)
@@ -51,19 +52,24 @@ _data = {
 &"damage": SubResource("Animation_287tu")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_287tu"]
+size = Vector2(453.0114, 20)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=949670304 groups=["Enemy"]]
 scale = Vector2(3.5199995, 3.5199995)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_1f0kj")
+bullet_scene = ExtResource("2_287tu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1828768671]
-scale = Vector2(0.12000003, 0.12000003)
-texture = ExtResource("1_hghv2")
+position = Vector2(3.1250005, -0.8522725)
+scale = Vector2(0.051818144, 0.051818144)
+texture = ExtResource("3_287tu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557876781]
 visible = false
-position = Vector2(-5.113637, 4.5454555)
+position = Vector2(1.4204547, 2.5568185)
 shape = SubResource("CapsuleShape2D_hghv2")
 
 [node name="LeftFear" type="Area2D" parent="." unique_id=1429609357]
@@ -114,8 +120,29 @@ offset_bottom = 11.269997
 scale = Vector2(1.1177692, 1.4295305)
 color = Color(0.7474506, 0.043625005, 9.62615e-08, 1)
 
+[node name="ShootTimer" type="Timer" parent="." unique_id=1114157039]
+
+[node name="LeftAim" type="Area2D" parent="." unique_id=339510725]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftAim" unique_id=307555422]
+position = Vector2(-242.0455, -1.1363639)
+shape = SubResource("RectangleShape2D_287tu")
+
+[node name="RightAim" type="Area2D" parent="." unique_id=1613493033]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightAim" unique_id=26392414]
+position = Vector2(216.6762, -0.56818193)
+shape = SubResource("RectangleShape2D_287tu")
+
 [connection signal="body_entered" from="LeftFear" to="." method="_on_left_fear_body_entered"]
 [connection signal="body_exited" from="LeftFear" to="." method="_on_left_fear_body_exited"]
 [connection signal="body_entered" from="RightFear" to="." method="_on_right_fear_body_entered"]
 [connection signal="body_exited" from="RightFear" to="." method="_on_right_fear_body_exited"]
 [connection signal="body_entered" from="MaskPickup" to="." method="_on_mask_pickup_body_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="body_entered" from="LeftAim" to="." method="_on_left_aim_body_entered"]
+[connection signal="body_exited" from="LeftAim" to="." method="_on_left_aim_body_exited"]
+[connection signal="body_entered" from="RightAim" to="." method="_on_right_aim_body_entered"]
+[connection signal="body_exited" from="RightAim" to="." method="_on_right_aim_body_exited"]

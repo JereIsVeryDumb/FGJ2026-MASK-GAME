@@ -14,26 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://c25151b30qjvu" path="res://Assets/puska.png" id="7_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://bvi7u1vjf78ya" path="res://Assets/nurmikko.png" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://vc6qsh21itak" path="res://Assets/maa.png" id="9_6iyac"]
-[ext_resource type="Texture2D" uid="uid://bqhj4ipmjteul" path="res://Assets/AloitusAluePNG.webp" id="9_b3802"]
 [ext_resource type="Texture2D" uid="uid://bhb3dhcekisvk" path="res://Assets/ruukkipuu1.png" id="9_jkdf5"]
 [ext_resource type="Shader" uid="uid://nutbcyyjlrbp" path="res://Assets/crtshader.gdshader" id="10_hptm8"]
 [ext_resource type="Texture2D" uid="uid://7wybm3cw3a6p" path="res://Assets/ruukkipuu3.png" id="11_k12tt"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_b3802"]
-seed = 1
-frequency = 0.0004
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fevyy"]
-width = 16
-height = 16
-noise = SubResource("FastNoiseLite_b3802")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hibaj"]
-particle_flag_disable_z = true
-spread = 0.0
-gravity = Vector3(0, -65, 0)
-scale_min = 0.45
-scale_max = 1.4
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ynf5e"]
 
@@ -42,14 +25,6 @@ noise = SubResource("FastNoiseLite_ynf5e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7u77a"]
 size = Vector2(1154.5, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3802"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
-size = Vector2(190.5, 1025)
-
-[sub_resource type="LabelSettings" id="LabelSettings_h1bgf"]
-font_size = 56
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d1ilt"]
 shader = ExtResource("10_hptm8")
@@ -86,38 +61,35 @@ position = Vector2(961.78345, 540.5)
 scale = Vector2(1.3904637, 1.390464)
 texture = ExtResource("1_ynf5e")
 
-[node name="Foreground2" type="Sprite2D" parent="Assetit" unique_id=50049625]
-position = Vector2(-105, 810)
-texture = ExtResource("2_wsu2k")
-
-[node name="Foreground3" type="Sprite2D" parent="Assetit" unique_id=701392945]
-position = Vector2(1187, 729)
-texture = ExtResource("2_wsu2k")
-
 [node name="Foreground" type="Sprite2D" parent="Assetit" unique_id=853612427]
-position = Vector2(800, 568)
+position = Vector2(821, 771)
 texture = ExtResource("2_wsu2k")
+
+[node name="Puu11" type="Sprite2D" parent="Assetit" unique_id=827001912]
+position = Vector2(464, 863)
+scale = Vector2(0.6106909, 0.6106909)
+texture = ExtResource("3_hptm8")
+
+[node name="Puu1" type="Sprite2D" parent="Assetit" unique_id=1724017339]
+position = Vector2(156, 759)
+texture = ExtResource("1_344ge")
+
+[node name="Puu2" type="Sprite2D" parent="Assetit" unique_id=2017753906]
+position = Vector2(1783, 751)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu3" type="Sprite2D" parent="Assetit" unique_id=1088769677]
+position = Vector2(1180, 750)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu4" type="Sprite2D" parent="Assetit" unique_id=235094724]
+position = Vector2(574, 751)
+texture = ExtResource("3_hptm8")
 
 [node name="Sieni3" type="Sprite2D" parent="Assetit" unique_id=954336423]
 position = Vector2(672, 997)
 scale = Vector2(0.65, 0.65000004)
 texture = ExtResource("4_d1ilt")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Assetit" unique_id=1962058963]
-position = Vector2(681, 713)
-sub_emitter = NodePath(".")
-texture = SubResource("NoiseTexture2D_fevyy")
-explosiveness = 0.43
-process_material = SubResource("ParticleProcessMaterial_hibaj")
-
-[node name="CarCrash" type="Sprite2D" parent="Assetit" unique_id=1052775739]
-position = Vector2(900.9999, 742.99994)
-scale = Vector2(0.5517076, 0.6317125)
-texture = ExtResource("9_b3802")
-
-[node name="Puska4" type="Sprite2D" parent="Assetit" unique_id=380094870]
-position = Vector2(877, 1000)
-texture = ExtResource("7_fdnlq")
 
 [node name="Sieni2" type="Sprite2D" parent="Assetit" unique_id=858715460]
 position = Vector2(1246, 997)
@@ -128,31 +100,23 @@ texture = ExtResource("5_6iyac")
 position = Vector2(143, 958)
 texture = ExtResource("7_fdnlq")
 
-[node name="Puu6" type="Sprite2D" parent="Assetit" unique_id=1004162863]
-position = Vector2(189, 689)
-texture = ExtResource("1_344ge")
-
-[node name="Puu13" type="Sprite2D" parent="Assetit" unique_id=575125619]
-position = Vector2(1219, 705)
-texture = ExtResource("2_ynf5e")
-
-[node name="Puu5" type="Sprite2D" parent="Assetit" unique_id=2120199157]
-position = Vector2(232, 783)
-texture = ExtResource("2_ynf5e")
-
-[node name="Puska3" type="Sprite2D" parent="Assetit" unique_id=1309830202]
-position = Vector2(523, 957)
-texture = ExtResource("7_fdnlq")
-
 [node name="Sieni1" type="Sprite2D" parent="Assetit" unique_id=96785287]
 position = Vector2(192, 984.00006)
 scale = Vector2(0.7807019, 0.7807017)
 texture = ExtResource("6_fdnlq")
 
+[node name="Puu5" type="Sprite2D" parent="Assetit" unique_id=2120199157]
+position = Vector2(908, 752)
+texture = ExtResource("2_ynf5e")
+
 [node name="Puu12" type="Sprite2D" parent="Assetit" unique_id=958754849]
-position = Vector2(473.00006, 787)
+position = Vector2(270, 813)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_ynf5e")
+
+[node name="Puu6" type="Sprite2D" parent="Assetit" unique_id=1004162863]
+position = Vector2(757, 761)
+texture = ExtResource("1_344ge")
 
 [node name="Puu16" type="Sprite2D" parent="Assetit" unique_id=611372063]
 position = Vector2(1266, 770)
@@ -163,7 +127,7 @@ position = Vector2(354, 753)
 texture = ExtResource("3_hptm8")
 
 [node name="Puu8" type="Sprite2D" parent="Assetit" unique_id=33509897]
-position = Vector2(1277, 759)
+position = Vector2(1050, 757)
 texture = ExtResource("2_ynf5e")
 
 [node name="Puu9" type="Sprite2D" parent="Assetit" unique_id=941711183]
@@ -218,6 +182,30 @@ position = Vector2(1656, 992)
 scale = Vector2(0.7807019, 0.7807017)
 texture = ExtResource("6_fdnlq")
 
+[node name="Puu13" type="Sprite2D" parent="Assetit" unique_id=575125619]
+position = Vector2(1050, 757)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu14" type="Sprite2D" parent="Assetit" unique_id=725212346]
+position = Vector2(1454, 759)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu15" type="Sprite2D" parent="Assetit" unique_id=1722508938]
+position = Vector2(36, 749)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu17" type="Sprite2D" parent="Assetit" unique_id=1094448667]
+position = Vector2(1689, 747)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu18" type="Sprite2D" parent="Assetit" unique_id=740395258]
+position = Vector2(850, 784)
+texture = ExtResource("1_344ge")
+
+[node name="Puu19" type="Sprite2D" parent="Assetit" unique_id=873663004]
+position = Vector2(1076, 781)
+texture = ExtResource("2_ynf5e")
+
 [node name="Grass" type="Sprite2D" parent="Assetit" unique_id=1791103214]
 position = Vector2(294, 987)
 texture = ExtResource("8_d1ilt")
@@ -267,80 +255,44 @@ texture = ExtResource("9_6iyac")
 
 [node name="Enemy" parent="." unique_id=1570632947 instance=ExtResource("2_bo1nx")]
 unique_name_in_owner = true
-position = Vector2(156.00012, 962)
-scale = Vector2(2.03, 2.03)
+position = Vector2(716, 445)
+scale = Vector2(1.3599994, 1.3599994)
 
 [node name="Enemy2" parent="." unique_id=949670304 instance=ExtResource("2_bo1nx")]
 unique_name_in_owner = true
-position = Vector2(1775, 959)
-scale = Vector2(2.03, 2.03)
+position = Vector2(1226, 716)
+scale = Vector2(1.3599994, 1.3599994)
 
 [node name="Player" parent="." unique_id=2129102789 instance=ExtResource("1_jjgbg")]
-position = Vector2(953, 920)
+position = Vector2(217, 551)
 scale = Vector2(1.0900006, 1.0900006)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1581827304]
-position = Vector2(46.000004, 539)
-scale = Vector2(5.8099065, 63.36001)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=14495929]
-shape = SubResource("RectangleShape2D_b3802")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=11585032]
-position = Vector2(1910, 470)
-scale = Vector2(5.8099065, 63.36001)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=64673020]
-shape = SubResource("RectangleShape2D_b3802")
-
-[node name="Level2Pass" type="Area2D" parent="." unique_id=441518048]
-position = Vector2(1832, 889)
-collision_layer = 16
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Pass" unique_id=530216777]
-position = Vector2(-164, -75)
-shape = SubResource("RectangleShape2D_h1bgf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=761265403]
 offset_right = 1917.0
 offset_bottom = 1078.0
-color = Color(0, 0, 0, 0.38431373)
-metadata/_edit_use_anchors_ = true
+color = Color(0, 0, 0, 0.6313726)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1876478000]
-layer = 0
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1627526221]
-visible = false
-offset_left = 702.0
-offset_top = 253.0
-offset_right = 1170.0
-offset_bottom = 330.0
-text = "You died lol noob"
-label_settings = SubResource("LabelSettings_h1bgf")
-
-[node name="DeathScreen" type="VBoxContainer" parent="CanvasLayer" unique_id=426147918]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=426147918]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -114.0
-offset_top = -121.0
-offset_right = 66.0
-offset_bottom = 175.0
+offset_left = -90.0
+offset_top = -148.0
+offset_right = 90.0
+offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
-focus_mode = 2
 
-[node name="RestartButton" type="Button" parent="CanvasLayer/DeathScreen" unique_id=1700965643]
+[node name="StartButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1700965643]
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Restart"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/DeathScreen" unique_id=1617139240]
+[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1617139240]
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Quit"
@@ -350,14 +302,5 @@ material = SubResource("ShaderMaterial_d1ilt")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 22.0
-offset_top = 8.0
-offset_right = 22.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-
-[connection signal="body_entered" from="Level2Pass" to="." method="_on_level_2_pass_body_entered"]
-[connection signal="pressed" from="CanvasLayer/DeathScreen/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/DeathScreen/QuitButton" to="." method="_on_quit_button_pressed"]
