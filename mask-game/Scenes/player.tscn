@@ -7,6 +7,9 @@
 radius = 49.0
 height = 210.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(132, 198.5)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 32.24903
 
@@ -25,21 +28,38 @@ texture = ExtResource("1_v0iea")
 position = Vector2(1.5258789e-05, 1.0000153)
 shape = SubResource("CapsuleShape2D_cvnsp")
 
+[node name="PickupDetector" type="Area2D" parent="." unique_id=315727078]
+scale = Vector2(1.4800009, 1.1600003)
+collision_mask = 255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupDetector" unique_id=517159913]
+position = Vector2(7, -6)
+shape = SubResource("RectangleShape2D_cvnsp")
+
 [node name="ClawHurtBox" type="Area2D" parent="." unique_id=639542864]
-position = Vector2(66.000015, -26.999985)
+position = Vector2(84, -2)
+scale = Vector2(1.2800006, 1.2800006)
+collision_layer = 16
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClawHurtBox" unique_id=1293619191]
 position = Vector2(7, -6)
 shape = SubResource("CircleShape2D_cvnsp")
 
 [node name="ColorRect" type="ColorRect" parent="ClawHurtBox" unique_id=323407669]
+visible = false
 offset_left = -14.0
 offset_top = -27.0
 offset_right = 26.0
 offset_bottom = 13.0
 
-[node name="ClawLeft" type="Node2D" parent="." unique_id=1576330081]
-position = Vector2(-50, -14)
+[node name="ClawPositionLeft" type="Node2D" parent="." unique_id=2080326210]
+position = Vector2(-51, -2)
 
-[node name="ClawRight" type="Node2D" parent="." unique_id=1999948086]
-position = Vector2(70, -29)
+[node name="ClawPositionRight" type="Node2D" parent="." unique_id=1929299521]
+position = Vector2(73, -30)
+
+[connection signal="body_entered" from="PickupDetector" to="." method="_on_pickup_detector_body_entered"]
+[connection signal="body_exited" from="PickupDetector" to="." method="_on_pickup_detector_body_exited"]
+[connection signal="body_entered" from="ClawHurtBox" to="." method="_on_claw_hurt_box_body_entered"]
+[connection signal="body_exited" from="ClawHurtBox" to="." method="_on_claw_hurt_box_body_exited"]

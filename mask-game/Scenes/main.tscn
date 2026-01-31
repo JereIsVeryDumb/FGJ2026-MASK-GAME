@@ -1,31 +1,193 @@
 [gd_scene format=3 uid="uid://3jy6cgwhjm4e"]
 
+[ext_resource type="Texture2D" uid="uid://ca02anypcjbqo" path="res://Assets/puu1.png" id="1_344ge"]
 [ext_resource type="PackedScene" uid="uid://06hjdg86djqw" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://d3au8o30yugfb" path="res://Assets/toi star wars.png" id="1_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://d0qtowtvrwv85" path="res://Scenes/enemy.tscn" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://cmo8byol2wli8" path="res://Assets/puu2.png" id="2_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://ctq464sowy8oe" path="res://Assets/puu3.png" id="3_hptm8"]
+[ext_resource type="Texture2D" uid="uid://dlfp0x5fql6pv" path="res://Assets/sieni 3.png" id="4_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://car553vxfoc6m" path="res://Assets/sieni 2.png" id="5_6iyac"]
+[ext_resource type="Texture2D" uid="uid://cxn7dq7k8jlqg" path="res://Assets/sieni1.png" id="6_fdnlq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ynf5e"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hptm8"]
+noise = SubResource("FastNoiseLite_ynf5e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7u77a"]
 size = Vector2(1154.5, 40)
 
 [node name="Main" type="Node2D" unique_id=2071018272]
 
+[node name="Assetit" type="Node2D" parent="." unique_id=1023800409]
+
+[node name="ToiStarWars" type="Sprite2D" parent="Assetit" unique_id=1092091606]
+position = Vector2(961.78345, 540.5)
+scale = Vector2(1.3904637, 1.390464)
+texture = ExtResource("1_ynf5e")
+
+[node name="Puu11" type="Sprite2D" parent="Assetit" unique_id=827001912]
+position = Vector2(464, 863)
+scale = Vector2(0.6106909, 0.6106909)
+texture = ExtResource("3_hptm8")
+
+[node name="Puu1" type="Sprite2D" parent="Assetit" unique_id=1724017339]
+position = Vector2(156, 759)
+texture = ExtResource("1_344ge")
+
+[node name="Puu2" type="Sprite2D" parent="Assetit" unique_id=2017753906]
+position = Vector2(1783, 751)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu3" type="Sprite2D" parent="Assetit" unique_id=1088769677]
+position = Vector2(1180, 750)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu4" type="Sprite2D" parent="Assetit" unique_id=235094724]
+position = Vector2(574, 751)
+texture = ExtResource("3_hptm8")
+
+[node name="Sieni3" type="Sprite2D" parent="Assetit" unique_id=954336423]
+position = Vector2(672, 997)
+scale = Vector2(0.65, 0.65000004)
+texture = ExtResource("4_d1ilt")
+
+[node name="Sieni2" type="Sprite2D" parent="Assetit" unique_id=858715460]
+position = Vector2(1246, 997)
+scale = Vector2(0.61864406, 0.61864406)
+texture = ExtResource("5_6iyac")
+
+[node name="Sieni1" type="Sprite2D" parent="Assetit" unique_id=96785287]
+position = Vector2(192, 984.00006)
+scale = Vector2(0.7807019, 0.7807017)
+texture = ExtResource("6_fdnlq")
+
+[node name="Puu5" type="Sprite2D" parent="Assetit" unique_id=2120199157]
+position = Vector2(908, 752)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu12" type="Sprite2D" parent="Assetit" unique_id=958754849]
+position = Vector2(270, 813)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu6" type="Sprite2D" parent="Assetit" unique_id=1004162863]
+position = Vector2(757, 761)
+texture = ExtResource("1_344ge")
+
+[node name="Puu16" type="Sprite2D" parent="Assetit" unique_id=611372063]
+position = Vector2(1266, 770)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu7" type="Sprite2D" parent="Assetit" unique_id=520690757]
+position = Vector2(354, 753)
+texture = ExtResource("3_hptm8")
+
+[node name="Puu8" type="Sprite2D" parent="Assetit" unique_id=33509897]
+position = Vector2(1050, 757)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu9" type="Sprite2D" parent="Assetit" unique_id=941711183]
+position = Vector2(1374, 763)
+texture = ExtResource("1_344ge")
+
+[node name="Puu10" type="Sprite2D" parent="Assetit" unique_id=1211954570]
+position = Vector2(1570, 754)
+texture = ExtResource("3_hptm8")
+
+[node name="Sieni5" type="Sprite2D" parent="Assetit" unique_id=1751907265]
+position = Vector2(442.99997, 989.99994)
+scale = Vector2(0.7288135, 0.7288136)
+texture = ExtResource("5_6iyac")
+
+[node name="Sieni4" type="Sprite2D" parent="Assetit" unique_id=42980872]
+position = Vector2(981, 992)
+scale = Vector2(0.61864406, 0.61864406)
+texture = ExtResource("5_6iyac")
+
+[node name="Sieni6" type="Sprite2D" parent="Assetit" unique_id=631791359]
+position = Vector2(1417, 1001)
+scale = Vector2(0.65, 0.65000004)
+texture = ExtResource("4_d1ilt")
+
+[node name="Sieni7" type="Sprite2D" parent="Assetit" unique_id=374223216]
+position = Vector2(791.99994, 985)
+scale = Vector2(0.7807019, 0.7807017)
+texture = ExtResource("6_fdnlq")
+
+[node name="Sieni8" type="Sprite2D" parent="Assetit" unique_id=1765718897]
+position = Vector2(1656, 992)
+scale = Vector2(0.7807019, 0.7807017)
+texture = ExtResource("6_fdnlq")
+
+[node name="Puu13" type="Sprite2D" parent="Assetit" unique_id=575125619]
+position = Vector2(1050, 757)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu14" type="Sprite2D" parent="Assetit" unique_id=725212346]
+position = Vector2(1454, 759)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu15" type="Sprite2D" parent="Assetit" unique_id=1722508938]
+position = Vector2(36, 749)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu17" type="Sprite2D" parent="Assetit" unique_id=1094448667]
+position = Vector2(1689, 747)
+texture = ExtResource("2_ynf5e")
+
+[node name="Puu18" type="Sprite2D" parent="Assetit" unique_id=740395258]
+position = Vector2(850, 784)
+texture = ExtResource("1_344ge")
+
+[node name="Puu19" type="Sprite2D" parent="Assetit" unique_id=873663004]
+position = Vector2(1076, 781)
+texture = ExtResource("2_ynf5e")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1607246863]
+position = Vector2(953.5001, 550.00006)
+scale = Vector2(3.7324219, 2.1289065)
+texture = SubResource("NoiseTexture2D_hptm8")
+
 [node name="Player" parent="." unique_id=2129102789 instance=ExtResource("1_jjgbg")]
-position = Vector2(362.00018, 337)
+position = Vector2(876, 371.00003)
 scale = Vector2(0.27999997, 0.27999997)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1470588443]
+position = Vector2(24, 420)
 scale = Vector2(1.6000016, 1)
 collision_mask = 65535
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1150617481]
+offset_left = -16.249983
 offset_top = 606.0
-offset_right = 40.0
-offset_bottom = 646.0
+offset_right = 25.36614
+offset_bottom = 663.0
 scale = Vector2(28.880003, 1)
+color = Color(0.043137256, 0.1764706, 0.05882353, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=715538274]
+visible = false
 position = Vector2(576.75, 627)
 shape = SubResource("RectangleShape2D_7u77a")
 
-[node name="Enemy" parent="." unique_id=949670304 instance=ExtResource("2_bo1nx")]
+[node name="Enemy2" parent="." unique_id=949670304 instance=ExtResource("2_bo1nx")]
+unique_name_in_owner = true
+position = Vector2(852, 569)
+scale = Vector2(1.3599994, 1.3599994)
+
+[node name="Enemy3" parent="." unique_id=1001451834 instance=ExtResource("2_bo1nx")]
+unique_name_in_owner = true
+position = Vector2(1296, 744)
+scale = Vector2(1.3599994, 1.3599994)
+
+[node name="Enemy" parent="." unique_id=1570632947 instance=ExtResource("2_bo1nx")]
+unique_name_in_owner = true
 position = Vector2(716, 445)
 scale = Vector2(1.3599994, 1.3599994)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=761265403]
+offset_right = 1917.0
+offset_bottom = 1078.0
+color = Color(0, 0, 0, 0.6313726)

@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cxprjghnesadd" path="res://Scenes/main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://c03e4w13dgany" path="res://Assets/JERE (1).webp" id="2_48xlc"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_48xlc"]
+font_size = 74
+
 [node name="Main_Menu" type="Control" unique_id=1591720111]
 layout_mode = 3
 anchors_preset = 15
@@ -47,8 +50,17 @@ theme_override_font_sizes/font_size = 45
 text = "Quit"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1855864477]
-position = Vector2(647, 653)
+position = Vector2(1283, 806)
 texture = ExtResource("2_48xlc")
+
+[node name="Label" type="Label" parent="." unique_id=1930670835]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 8.0
+offset_right = 1398.0
+offset_bottom = 110.0
+text = "Local Predator Simulator"
+label_settings = SubResource("LabelSettings_48xlc")
 
 [connection signal="button_down" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

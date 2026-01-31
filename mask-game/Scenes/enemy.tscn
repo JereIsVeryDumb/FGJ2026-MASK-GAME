@@ -2,15 +2,56 @@
 
 [ext_resource type="Script" uid="uid://ccfvpp0v57hl6" path="res://Scenes/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://cqmsyalg2gwqu" path="res://Assets/evil placeholder potato.png" id="1_hghv2"]
+[ext_resource type="Texture2D" uid="uid://dgqiar5slw87a" path="res://Assets/death.png" id="3_afpow"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hghv2"]
 radius = 14.0
 height = 66.750015
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
-size = Vector2(102.55684, 88.0682)
+size = Vector2(496.5825, 88.0682)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=949670304]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afpow"]
+size = Vector2(70.73865, 75.56819)
+
+[sub_resource type="Animation" id="Animation_afpow"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_287tu"]
+resource_name = "damage"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1.0, 0.25, 0.01]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0830c"]
+_data = {
+&"RESET": SubResource("Animation_afpow"),
+&"damage": SubResource("Animation_287tu")
+}
+
+[node name="Enemy" type="CharacterBody2D" unique_id=949670304 groups=["Enemy"]]
 scale = Vector2(3.5199995, 3.5199995)
 collision_layer = 4
 collision_mask = 3
@@ -21,6 +62,7 @@ scale = Vector2(0.12000003, 0.12000003)
 texture = ExtResource("1_hghv2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557876781]
+visible = false
 position = Vector2(-5.113637, 4.5454555)
 shape = SubResource("CapsuleShape2D_hghv2")
 
@@ -30,21 +72,50 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFear" unique_id=2089143400]
-position = Vector2(20.170458, 0.56818235)
-scale = Vector2(0.5454545, 0.5454545)
+position = Vector2(-76.988655, 3.6931827)
+scale = Vector2(0.54068404, 0.5454546)
 shape = SubResource("RectangleShape2D_1f0kj")
 
 [node name="RightFear" type="Area2D" parent="." unique_id=1524048246]
 position = Vector2(57.386375, -2.2727277)
+scale = Vector2(0.9942865, 1)
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightFear" unique_id=1177861081]
-position = Vector2(-21.875008, 1.988637)
+position = Vector2(81.431175, 1.9886366)
 scale = Vector2(0.51962805, 0.5833333)
 shape = SubResource("RectangleShape2D_1f0kj")
+
+[node name="Death_Sprite" type="Sprite2D" parent="." unique_id=804253344]
+visible = false
+position = Vector2(2.2727277, -21.022732)
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("3_afpow")
+
+[node name="MaskPickup" type="Area2D" parent="." unique_id=900359403]
+position = Vector2(0.28409097, -17.045458)
+collision_layer = 4
+collision_mask = 255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaskPickup" unique_id=368657303]
+position = Vector2(-1.5625011, 14.204557)
+shape = SubResource("RectangleShape2D_afpow")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1446371674]
+libraries/ = SubResource("AnimationLibrary_0830c")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=22685013]
+visible = false
+offset_left = -18.465912
+offset_top = -21.875004
+offset_right = 6.4140873
+offset_bottom = 11.269997
+scale = Vector2(1.1177692, 1.4295305)
+color = Color(0.7474506, 0.043625005, 9.62615e-08, 1)
 
 [connection signal="body_entered" from="LeftFear" to="." method="_on_left_fear_body_entered"]
 [connection signal="body_exited" from="LeftFear" to="." method="_on_left_fear_body_exited"]
 [connection signal="body_entered" from="RightFear" to="." method="_on_right_fear_body_entered"]
 [connection signal="body_exited" from="RightFear" to="." method="_on_right_fear_body_exited"]
+[connection signal="body_entered" from="MaskPickup" to="." method="_on_mask_pickup_body_entered"]
