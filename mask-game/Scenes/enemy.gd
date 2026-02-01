@@ -14,7 +14,7 @@ extends CharacterBody2D
 @onready var death_sprite: Sprite2D = $Death_Sprite
 @onready var collider: CollisionShape2D = $CollisionShape2D
 @onready var shoot_timer: Timer = $ShootTimer
-
+@onready var shoot_animation = $AnimationPlayer
 var alive: bool = true
 var player_in_left: bool = false
 var player_in_right: bool = false
@@ -95,6 +95,7 @@ func start_shooting():
 	if alive and shoot_timer.is_stopped():
 		shoot_timer.start()
 		print("Time to shoot")
+		shoot_animation.play("shooting")
 
 func stop_shooting_if_needed():
 	if not player_in_left and not player_in_right:
