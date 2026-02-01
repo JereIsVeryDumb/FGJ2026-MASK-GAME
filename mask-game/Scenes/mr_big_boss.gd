@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 200.0
-@export var HP: int = 3
+@export var HP: int = 25
 
 @export var bullet_scene: PackedScene
 @export var shoot_offset: float = 16.0
@@ -71,28 +71,12 @@ func _physics_process(delta):
 # --------------------
 # Detection
 # --------------------
-func _on_left_fear_body_entered(body):
-	if body.name == "Player":
-		player_in_left = true
-
-func _on_left_fear_body_exited(body):
-	if body.name == "Player":
-		player_in_left = false
-
-func _on_right_fear_body_entered(body):
-	if body.name == "Player":
-		player_in_right = true
-
-func _on_right_fear_body_exited(body):
-	if body.name == "Player":
-		player_in_right = false
-
 
 # --------------------
 # Shooting
 # --------------------
 func start_shooting():
-	if alive and shoot_timer.is_stopped():
+	if alive and shoot_timer.is_stopped() and self.visible == true:
 		shoot_timer.start()
 		print("Time to shoot")
 
@@ -113,10 +97,8 @@ func _on_shoot_timer_timeout():
 	var dir := Vector2.ZERO
 	if player_in_left_aim:
 		dir = Vector2.LEFT
-		$Sprite2D.flip_h = true
 	elif player_in_right_aim:
 		dir = Vector2.RIGHT
-		$Sprite2D.flip_h = false
 	else:
 		return
 

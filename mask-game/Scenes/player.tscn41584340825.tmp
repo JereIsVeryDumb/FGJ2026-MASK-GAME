@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ch3dn6f4h7ro2" path="res://Assets/frame6.webp" id="12_fs7ks"]
 [ext_resource type="Texture2D" uid="uid://dpfhhve0vkd8i" path="res://Assets/frame7.webp" id="13_l6n3p"]
 [ext_resource type="Texture2D" uid="uid://bvpofuo66oegv" path="res://Assets/frame9.webp" id="14_olqyp"]
-[ext_resource type="Animation" uid="uid://cyb6ibgnh0j2t" path="res://Assets/walking_animation.res" id="15_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://b8ky4nr1b3yrk" path="res://Assets/frame2 of predator.webp" id="15_h4iuc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 49.0
@@ -69,14 +69,10 @@ tracks/0/keys = {
 "values": [ExtResource("7_7dp3o"), ExtResource("8_h4iuc"), ExtResource("9_fd4e3"), ExtResource("10_qqcod"), ExtResource("11_igrcy"), ExtResource("12_fs7ks"), ExtResource("13_l6n3p"), ExtResource("14_olqyp")]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ijsl"]
-_data = {
-&"RESET": SubResource("Animation_wpjfl"),
-&"claw_animation": SubResource("Animation_bi64h")
-}
-
-[sub_resource type="Animation" id="Animation_h4iuc"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_fd4e3"]
+resource_name = "walking_animation"
+length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -84,16 +80,17 @@ tracks/0/path = NodePath("WalkingSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.23333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_vgqql")]
+"values": [ExtResource("4_vgqql"), ExtResource("15_h4iuc"), ExtResource("4_vgqql")]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4iuc"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ijsl"]
 _data = {
-&"RESET": SubResource("Animation_h4iuc"),
-&"walking_animation": ExtResource("15_h4iuc")
+&"RESET": SubResource("Animation_wpjfl"),
+&"claw_animation": SubResource("Animation_bi64h"),
+&"walking_animation": SubResource("Animation_fd4e3")
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=2129102789]
@@ -181,16 +178,12 @@ texture = ExtResource("5_fkybt")
 visible = false
 position = Vector2(115.52795, -10.559006)
 
-[node name="ClawAnimation" type="AnimationPlayer" parent="." unique_id=1032969040]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1032969040]
 libraries/ = SubResource("AnimationLibrary_2ijsl")
-
-[node name="WalkingAnimation" type="AnimationPlayer" parent="." unique_id=956996537]
-libraries/ = SubResource("AnimationLibrary_h4iuc")
 
 [connection signal="body_entered" from="PickupDetector" to="." method="_on_pickup_detector_body_entered"]
 [connection signal="body_exited" from="PickupDetector" to="." method="_on_pickup_detector_body_exited"]
 [connection signal="body_entered" from="ClawHurtBox" to="." method="_on_claw_hurt_box_body_entered"]
 [connection signal="body_exited" from="ClawHurtBox" to="." method="_on_claw_hurt_box_body_exited"]
-[connection signal="animation_changed" from="ClawAnimation" to="." method="_on_animation_player_animation_changed"]
-[connection signal="animation_finished" from="ClawAnimation" to="." method="_on_claw_animation_animation_finished"]
-[connection signal="animation_finished" from="ClawAnimation" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_animation_player_animation_changed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://b27fcg8j35jvc"]
 
 [ext_resource type="Script" uid="uid://cxprjghnesadd" path="res://Scenes/main_menu.gd" id="1_28flt"]
-[ext_resource type="Texture2D" uid="uid://c03e4w13dgany" path="res://Assets/JERE (1).webp" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cu8ggmd0neubq" path="res://Assets/maski1.png" id="2_1ehe0"]
+[ext_resource type="FontFile" uid="uid://ckgtrs6mh36jx" path="res://Assets/HelpMe.ttf" id="3_ce3w2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_48xlc"]
-font_size = 74
+font = ExtResource("3_ce3w2")
+font_size = 255
+shadow_size = 22
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Main_Menu" type="Control" unique_id=1591720111]
 layout_mode = 3
@@ -15,6 +19,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1958887252]
+modulate = Color(0, 0, 0, 0.88235295)
+light_mask = 0
+visibility_layer = 4
+layout_mode = 0
+offset_left = -0.9999981
+offset_top = -5.9999995
+offset_right = 39.0
+offset_bottom = 34.0
+scale = Vector2(48.04, 27.400002)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1855864477]
+modulate = Color(0.072842635, 0.072842635, 0.072842635, 0.3372549)
+texture_filter = 1
+position = Vector2(1036, 531)
+scale = Vector2(7.5600038, 7.5600038)
+texture = ExtResource("2_1ehe0")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1680811310]
 layout_mode = 1
 anchors_preset = 8
@@ -22,9 +44,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -90.0
+offset_left = -146.0
 offset_top = -148.0
-offset_right = 90.0
+offset_right = 34.0
 offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -33,11 +55,6 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Start"
-
-[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=1009140539]
-layout_mode = 2
-theme_override_font_sizes/font_size = 45
-text = "Options"
 
 [node name="Credits" type="Button" parent="VBoxContainer" unique_id=743970452]
 layout_mode = 2
@@ -49,20 +66,18 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Quit"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1855864477]
-position = Vector2(1283, 806)
-texture = ExtResource("2_48xlc")
-
 [node name="Label" type="Label" parent="." unique_id=1930670835]
 layout_mode = 0
-offset_left = 509.0
+offset_left = 61.0
 offset_top = 8.0
-offset_right = 1398.0
-offset_bottom = 110.0
-text = "Local Predator Simulator"
+offset_right = 1855.0
+offset_bottom = 300.0
+text = "Diokophobia"
 label_settings = SubResource("LabelSettings_48xlc")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=442470859]
+color = Color(0.355114, 0.0031678036, 0.12509993, 1)
+
 [connection signal="button_down" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

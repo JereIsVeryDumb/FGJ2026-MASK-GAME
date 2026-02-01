@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 600.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -700.0
 
 # --- Dash settings ---
 const DASH_DISTANCE = 600.0
@@ -17,13 +17,19 @@ var dash_timer := 0.0
 var max_hp = 3
 var hp = 0
 var damage = 1
+
+@onready var claw_animation = $ClawAnimation
+@onready var walking_animation = $WalkingAnimation
 var can_block = true
 var blocking = false
 var block_cooldown = 3.5
 var blocking_time = 1.0
 
-var local_mask_count = 0
+var can_claw = true
+var claw_cooldown = 0.7
 
+var local_mask_count = 0
+@export var bullet_scene : PackedScene
 # Track enemies
 var enemies_in_attack_range: Array = []
 var enemies_in_pickup_area: Array = []
@@ -71,6 +77,7 @@ func _physics_process(delta: float) -> void:
 	if not is_dashing:
 		if direction != 0:
 			velocity.x = direction * SPEED
+			walking_animation.play("walking_animation")
 		else:
 			if can_dash:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -78,10 +85,14 @@ func _physics_process(delta: float) -> void:
 	# --- Facing ---
 	if direction > 0:
 		$ClawHurtBox.position = $ClawPositionRight.position
+		$ClawSprite.position = $ClawPositionRight.position
+		$ClawSprite.flip_h = false
 		$IdleSprite.flip_h = false
 		$WalkingSprite.flip_h = false
 	elif direction < 0:
 		$ClawHurtBox.position = $ClawPositionLeft.position
+		$ClawSprite.position = $ClawPositionLeft.position
+		$ClawSprite.flip_h = true
 		$IdleSprite.flip_h = true
 		$WalkingSprite.flip_h = true
 
@@ -106,12 +117,20 @@ func _physics_process(delta: float) -> void:
 		dash()
 
 	# --- Attack ---
-	if Input.is_action_just_pressed("claw"):
+	if Input.is_action_just_pressed("claw") and can_claw:
+		$ClawSprite.visible = true
+		claw_animation.play("claw_animation")
 		for enemy in enemies_in_attack_range:
 			if enemy and enemy.alive:
 				enemy.take_damage(damage)
 				print("Attacked enemy:", enemy.name)
-
+				can_claw = false
+	
+	if not can_claw:
+		claw_cooldown -= delta
+		if claw_cooldown <= 0:
+			can_claw = true
+	
 	# --- Pickup ---
 	if Input.is_action_just_pressed("pickup"):
 		var dead_in_range = enemies_in_pickup_area.filter(
@@ -213,6 +232,9 @@ func pick_up_enemy(enemy):
 		local_mask_count += 1
 		damage += 1
 
+
+func shoot():
+	pass
 # --------------------
 # SIGNALS
 # --------------------
@@ -231,3 +253,10 @@ func _on_pickup_detector_body_entered(body):
 func _on_pickup_detector_body_exited(body):
 	if body.is_in_group("Enemy") and body.alive:
 		enemies_in_pickup_area.erase(body)
+
+
+
+
+
+func _on_claw_animation_animation_finished(anim_name: StringName) -> void:
+	$ClawSprite.visible = false

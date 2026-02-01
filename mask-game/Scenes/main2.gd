@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	Input.MOUSE_MODE_VISIBLE
 	if get_tree().get_nodes_in_group("Enemy").size() == 0:
 		can_proceed = true
+		$Assetit/LevelGuide.visible = true
 func _on_restart_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_2.tscn")
 

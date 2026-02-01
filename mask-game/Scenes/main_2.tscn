@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bvi7u1vjf78ya" path="res://Assets/nurmikko.png" id="13_u5i0y"]
 [ext_resource type="Texture2D" uid="uid://vc6qsh21itak" path="res://Assets/maa.png" id="14_habdg"]
 [ext_resource type="PackedScene" uid="uid://d0qtowtvrwv85" path="res://Scenes/enemy.tscn" id="15_qas6s"]
+[ext_resource type="Texture2D" uid="uid://cox7sjcahgxy" path="res://Assets/levelguide.png" id="16_7mvmt"]
 [ext_resource type="PackedScene" uid="uid://06hjdg86djqw" path="res://Scenes/player.tscn" id="16_37jld"]
 [ext_resource type="Shader" uid="uid://nutbcyyjlrbp" path="res://Assets/crtshader.gdshader" id="17_0o7lx"]
 
@@ -262,6 +263,11 @@ texture = ExtResource("13_u5i0y")
 [node name="Grass4" type="Sprite2D" parent="Assetit" unique_id=2099144459]
 position = Vector2(2008.5, 987)
 texture = ExtResource("13_u5i0y")
+
+[node name="LevelGuide" type="Sprite2D" parent="Assetit" unique_id=73618953]
+visible = false
+position = Vector2(1586, 788)
+texture = ExtResource("16_7mvmt")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1607246863]
 position = Vector2(953.5001, 550.00006)

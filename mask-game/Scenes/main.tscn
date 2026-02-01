@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bhb3dhcekisvk" path="res://Assets/ruukkipuu1.png" id="9_jkdf5"]
 [ext_resource type="Shader" uid="uid://nutbcyyjlrbp" path="res://Assets/crtshader.gdshader" id="10_hptm8"]
 [ext_resource type="Texture2D" uid="uid://7wybm3cw3a6p" path="res://Assets/ruukkipuu3.png" id="11_k12tt"]
+[ext_resource type="Texture2D" uid="uid://cox7sjcahgxy" path="res://Assets/levelguide.png" id="15_fevyy"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b3802"]
 seed = 1
@@ -234,6 +235,11 @@ texture = ExtResource("8_d1ilt")
 position = Vector2(2008.5, 987)
 texture = ExtResource("8_d1ilt")
 
+[node name="LevelGuide" type="Sprite2D" parent="Assetit" unique_id=141092482]
+visible = false
+position = Vector2(1427, 835)
+texture = ExtResource("15_fevyy")
+
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1607246863]
 position = Vector2(953.5001, 550.00006)
 scale = Vector2(3.7324219, 2.1289065)
@@ -305,7 +311,7 @@ shape = SubResource("RectangleShape2D_h1bgf")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=761265403]
 offset_right = 1917.0
 offset_bottom = 1078.0
-color = Color(0, 0, 0, 0.38431373)
+color = Color(0, 0, 0, 0.59607846)
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1876478000]
@@ -350,12 +356,13 @@ material = SubResource("ShaderMaterial_d1ilt")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 22.0
-offset_top = 8.0
-offset_right = 22.0
-offset_bottom = 8.0
+offset_left = -39.0
+offset_top = -23.0
+offset_right = -39.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.0399992, 1.0399992)
 mouse_filter = 2
 
 [connection signal="body_entered" from="Level2Pass" to="." method="_on_level_2_pass_body_entered"]

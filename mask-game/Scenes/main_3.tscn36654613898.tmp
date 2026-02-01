@@ -62,6 +62,7 @@ shader_parameter/glow_threshold = 0.65
 
 [node name="Main3" type="Node2D" unique_id=2071018272]
 script = ExtResource("1_6004n")
+big_boss_scene = ExtResource("2_r86hs")
 
 [node name="Assetit" type="Node2D" parent="." unique_id=1040253980]
 
@@ -346,15 +347,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Spawnpoint" type="Node2D" parent="." unique_id=975975398]
-position = Vector2(1495, 746)
-
-[node name="Mr Big Boss" parent="." unique_id=949670304 instance=ExtResource("2_r86hs")]
-position = Vector2(3254, 605.00006)
-scale = Vector2(9.749336, 9.749336)
-roam_change_time_min = 15.0
-roam_change_time_max = 15.0
 
 [connection signal="body_entered" from="Level2Pass" to="." method="_on_level_2_pass_body_entered"]
 [connection signal="pressed" from="CanvasLayer/DeathScreen/RestartButton" to="." method="_on_restart_button_pressed"]
